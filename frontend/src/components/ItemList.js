@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import '../styles/style.css';
 
 const ItemList = () => {
+  useEffect(() => {
+    document.title = 'List'; // Change the document title
+  }, []);
+
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -48,6 +52,7 @@ const ItemList = () => {
                 <Link to={`/items/edit/${item._id}`} className="btn btn-primary">
                   Edit
                 </Link>
+                <span className="button-space"></span>
                 <button
                   className="btn btn-danger ml-2"
                   onClick={() => deleteItem(item._id)}
@@ -59,7 +64,7 @@ const ItemList = () => {
           ))}
         </tbody>
       </table>
-      <Link to="/items/add" className="btn btn-primary">
+      <Link to="/items/add" className="btn btn-success">
         Add Item
       </Link>
     </div>

@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 const AddItem = () => {
+
+  useEffect(() => {
+    document.title = 'Add'; // Change the document title
+  }, []);
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const navigate = useNavigate();
@@ -43,7 +48,7 @@ const AddItem = () => {
             />
             <div className="invalid-feedback">Please enter a name.</div>
           </div>
-        </div>
+        </div><br/>
         <div className="form-group">
           <label htmlFor="description">Description:</label>
           <div>
@@ -56,11 +61,12 @@ const AddItem = () => {
             ></textarea>
             <div className="invalid-feedback">Please enter a description.</div>
           </div>
-        </div>
+        </div><br/>
         <div className="form-group">
           <button type="submit" className="btn btn-primary">
             Add
           </button>
+          <span className="button-space"></span>
           <Link to="/items" className="btn btn-secondary ml-2">
             Cancel
           </Link>

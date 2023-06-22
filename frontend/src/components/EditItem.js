@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import '../styles/style.css'; //
 
 const EditItem = () => {
+
+  useEffect(() => {
+    document.title = 'Edit'; // Change the document title
+  }, []);
+
   const { id } = useParams();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -38,21 +44,23 @@ const EditItem = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Edit Item</h2>
-      <form onSubmit={updateItem}>
-        <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-        </div>
-        <div>
-          <label>Description:</label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
-        </div>
-        <div>
-          <button className="btn btn-primary" type="submit">Update</button>
-          <Link to="/items" className="btn btn-primary">Cancel</Link>
-        </div>
+      <form onSubmit={updateItem} className="my-form">
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" className="form-control" value={name} onChange={(e) => setName(e.target.value)} required />
+        </div><br/>
+        <div className="form-group">
+          <label htmlFor="description">Description:</label>
+          <textarea id="description" className="form-control" value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
+        </div><br/>
+        <div className="form-group">
+  <button className="btn btn-success" type="submit">Update</button>
+  <span className="button-space"></span>
+  <Link to="/items" className="btn btn-secondary ml-2">Cancel</Link>
+</div>
+
       </form>
     </div>
   );

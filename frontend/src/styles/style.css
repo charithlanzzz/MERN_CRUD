@@ -5,6 +5,9 @@
   height: 100vh;
 }
 
+.home{
+  text-align: center;
+}
 
 .footer-container {
     display: flex;
@@ -71,3 +74,17 @@
   .table {
     text-align: center;
   }
+
+  .container {
+    width: 800px !important;
+    height: 400px;
+    background-color: #f0f0f0;
+    padding-top: 50px;
+    border-radius: 20px;
+  }
+  
+  .button-space {
+    margin-left: 10px; /* Adjust the value to control the space between buttons */
+  }
+  
+  
