@@ -17,21 +17,53 @@ const AddItem = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!e.target.checkValidity()) {
+      e.target.reportValidity();
+      return;
+    }
+    addItem();
+  };
+
   return (
-    <div>
+    <div className="container">
       <h2>Add Item</h2>
-      <form>
-        <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      <form className="my-form" onSubmit={handleSubmit} noValidate>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <div>
+            <input
+              type="text"
+              id="name"
+              className="form-control"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <div className="invalid-feedback">Please enter a name.</div>
+          </div>
         </div>
-        <div>
-          <label>Description:</label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+        <div className="form-group">
+          <label htmlFor="description">Description:</label>
+          <div>
+            <textarea
+              id="description"
+              className="form-control"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            ></textarea>
+            <div className="invalid-feedback">Please enter a description.</div>
+          </div>
         </div>
-        <div>
-          <button type="button" onClick={addItem}>Add</button>
-          <Link to="/items" className="btn btn-primary">Cancel</Link>
+        <div className="form-group">
+          <button type="submit" className="btn btn-primary">
+            Add
+          </button>
+          <Link to="/items" className="btn btn-secondary ml-2">
+            Cancel
+          </Link>
         </div>
       </form>
     </div>

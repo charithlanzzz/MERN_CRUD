@@ -46,6 +46,7 @@ const App = () => {
         </main>
 
         <footer>
+          <hr/>
           <Footer />
         </footer>
       </div>
