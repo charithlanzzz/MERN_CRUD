@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../styles/style.css';
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -30,12 +31,12 @@ const ItemList = () => {
   return (
     <div>
       <h2>Item List</h2>
-      <table className="table">
+      <table className="table table-striped">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th style={{ width: '200px' }}>Name</th>
+            <th style={{ width: '200px' }}>Description</th>
+            <th style={{ width: '200px' }}>Action</th>
           </tr>
         </thead>
         <tbody>
