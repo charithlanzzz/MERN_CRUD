@@ -33,7 +33,8 @@ const ItemList = () => {
   };
 
   return (
-    <div>
+    
+    <div className="container">
       <h2>Item List</h2>
       <table className="table table-striped">
         <thead>
