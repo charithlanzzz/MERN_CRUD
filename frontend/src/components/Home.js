@@ -38,7 +38,7 @@ return (
         Etiam et lorem vel urna dignissim faucibus.</p>
 
     <div className='button-container'>
-      <button className='btn btn-primary'>Learn More</button>
+      <button className='btn btn-success'>Learn More</button>
       <button className='btn btn-success'>Get Started</button>
     </div>
 
