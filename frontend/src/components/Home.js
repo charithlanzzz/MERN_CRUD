@@ -39,7 +39,7 @@ return (
 
     <div className='button-container'>
       <button className='btn btn-success'>Learn More</button>
-      <button className='btn btn-success'>Get Started</button>
+      <button className='btn btn-primary'>Get Started</button>
     </div>
 
  </div>
